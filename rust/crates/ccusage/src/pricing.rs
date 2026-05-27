@@ -571,6 +571,44 @@ impl PricingMap {
         ] {
             self.context_limits.insert(model.to_string(), 200_000);
         }
+
+        // DeepSeek models (used by Reasonix and other DeepSeek-compatible agents).
+        // Source: https://api-docs.deepseek.com/quick_start/pricing
+        let deepseek_chat = Pricing {
+            input: 0.27e-6,
+            output: 1.1e-6,
+            cache_create: 0.27e-6,
+            cache_read: 0.07e-6,
+            cache_read_explicit: false,
+            input_above_200k: None,
+            output_above_200k: None,
+            cache_create_above_200k: None,
+            cache_read_above_200k: None,
+            fast_multiplier: 1.0,
+        };
+        self.entries
+            .insert("deepseek/deepseek-chat".to_string(), deepseek_chat);
+        self.entries
+            .insert("deepseek-chat".to_string(), deepseek_chat);
+
+        let deepseek_reasoner = Pricing {
+            input: 0.55e-6,
+            output: 2.19e-6,
+            cache_create: 0.55e-6,
+            cache_read: 0.14e-6,
+            cache_read_explicit: false,
+            input_above_200k: None,
+            output_above_200k: None,
+            cache_create_above_200k: None,
+            cache_read_above_200k: None,
+            fast_multiplier: 1.0,
+        };
+        self.entries.insert(
+            "deepseek/deepseek-reasoner".to_string(),
+            deepseek_reasoner,
+        );
+        self.entries
+            .insert("deepseek-reasoner".to_string(), deepseek_reasoner);
     }
 }
 

@@ -14,3 +14,4 @@ pub(crate) mod openclaw;
 pub(crate) mod opencode;
 pub(crate) mod pi;
 pub(crate) mod qwen;
+pub(crate) mod reasonix;

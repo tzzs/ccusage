@@ -27,6 +27,7 @@ pub enum Command {
     Kimi(AgentCommandArgs),
     Qwen(AgentCommandArgs),
     OpenClaw(AgentCommandArgs),
+    Reasonix(AgentCommandArgs),
 }
 
 #[derive(Clone, Default)]

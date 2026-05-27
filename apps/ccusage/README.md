@@ -43,6 +43,7 @@ ccusage reads local usage data from coding agent CLIs and turns it into daily, w
 | Qwen               | `ccusage qwen daily`     |
 | GitHub Copilot CLI | `ccusage copilot daily`  |
 | Gemini CLI         | `ccusage gemini daily`   |
+| Reasonix           | `ccusage reasonix daily` |
 
 Use `ccusage daily`, `ccusage weekly`, `ccusage monthly`, or `ccusage session` to include every detected source in one report.
 
