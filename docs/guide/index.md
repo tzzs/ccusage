@@ -89,6 +89,7 @@ ccusage reads from local coding CLI data directories:
 | Qwen         | `qwen`     | `${QWEN_DATA_DIR:-~/.qwen}`                     |
 | Copilot CLI  | `copilot`  | `~/.copilot/otel/*.jsonl`                       |
 | Gemini CLI   | `gemini`   | `${GEMINI_DATA_DIR:-~/.gemini/tmp}`             |
+| Reasonix     | `reasonix` | `${REASONIX_HOME:-~/.reasonix}/usage.jsonl`     |
 
 The tool automatically detects available data and aggregates all supported coding CLIs by default.
 Each source-specific environment variable can also contain comma-separated directories, which lets unified reports combine current profiles and archives.
@@ -124,6 +125,7 @@ ccusage kimi daily
 ccusage qwen daily
 ccusage copilot daily
 ccusage gemini daily
+ccusage reasonix daily
 ```
 
 Use `ccusage <source> <report>` only when you want to narrow a report to one source.

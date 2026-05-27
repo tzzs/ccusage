@@ -22,9 +22,9 @@ pnpx ccusage reasonix --help
 
 The CLI scans for the Reasonix usage file:
 
-| Source    | Default path                | Override                   |
-| --------- | --------------------------- | -------------------------- |
-| Reasonix  | `~/.reasonix/usage.jsonl`   | `REASONIX_HOME`            |
+| Source   | Default path              | Override        |
+| -------- | ------------------------- | --------------- |
+| Reasonix | `~/.reasonix/usage.jsonl` | `REASONIX_HOME` |
 
 `REASONIX_HOME` can point to one directory or a comma-separated list of directories. Each directory is scanned for `usage.jsonl`.
 
@@ -58,12 +58,12 @@ Reasonix records `costUsd` on every usage entry. ccusage uses these embedded cos
 
 Reasonix tracks tokens differently from Anthropic's API. ccusage maps them as follows for consistent reporting:
 
-| Reasonix field      | ccusage field               |
-| ------------------- | --------------------------- |
-| `cacheMissTokens`   | `inputTokens`               |
-| `completionTokens`  | `outputTokens`              |
-| `cacheHitTokens`    | `cacheReadTokens`           |
-| —                   | `cacheCreationTokens` (0)   |
+| Reasonix field     | ccusage field             |
+| ------------------ | ------------------------- |
+| `cacheMissTokens`  | `inputTokens`             |
+| `completionTokens` | `outputTokens`            |
+| `cacheHitTokens`   | `cacheReadTokens`         |
+| —                  | `cacheCreationTokens` (0) |
 
 Total tokens = cacheMissTokens + completionTokens + cacheHitTokens = promptTokens + completionTokens.
 
@@ -73,10 +73,10 @@ Reasonix records the model name (e.g. `deepseek-v4-pro`, `deepseek-v4-flash`) di
 
 ## Environment Variables
 
-| Variable         | Description                                                       |
-| ---------------- | ----------------------------------------------------------------- |
-| `REASONIX_HOME`  | Custom path, or comma-separated paths, to Reasonix data directories |
-| `LOG_LEVEL`      | Adjust logging verbosity (0 silent … 5 trace)                     |
+| Variable        | Description                                                         |
+| --------------- | ------------------------------------------------------------------- |
+| `REASONIX_HOME` | Custom path, or comma-separated paths, to Reasonix data directories |
+| `LOG_LEVEL`     | Adjust logging verbosity (0 silent … 5 trace)                       |
 
 ## Daily View
 
@@ -92,13 +92,13 @@ npx ccusage@latest reasonix daily
 
 ### Options
 
-| Flag           | Short | Description                                         |
-| -------------- | ----- | --------------------------------------------------- |
-| `--since`      |       | Start date filter (YYYY-MM-DD or YYYYMMDD)          |
-| `--until`      |       | End date filter (YYYY-MM-DD or YYYYMMDD)            |
-| `--timezone`   | `-z`  | Override timezone for date grouping                 |
-| `--json`       | `-j`  | Emit structured JSON instead of a table             |
-| `--compact`    |       | Force compact table layout for narrow terminals     |
+| Flag         | Short | Description                                     |
+| ------------ | ----- | ----------------------------------------------- |
+| `--since`    |       | Start date filter (YYYY-MM-DD or YYYYMMDD)      |
+| `--until`    |       | End date filter (YYYY-MM-DD or YYYYMMDD)        |
+| `--timezone` | `-z`  | Override timezone for date grouping             |
+| `--json`     | `-j`  | Emit structured JSON instead of a table         |
+| `--compact`  |       | Force compact table layout for narrow terminals |
 
 ### Example Output
 
@@ -127,26 +127,26 @@ Returns structured data:
 
 ```json
 {
-  "daily": [
-    {
-      "date": "2026-05-28",
-      "inputTokens": 223054,
-      "outputTokens": 54155,
-      "cacheCreationTokens": 0,
-      "cacheReadTokens": 8980736,
-      "totalTokens": 9257945,
-      "totalCost": 0.17,
-      "modelsUsed": ["deepseek-v4-pro", "deepseek-v4-flash"]
-    }
-  ],
-  "totals": {
-    "inputTokens": 223054,
-    "outputTokens": 54155,
-    "cacheCreationTokens": 0,
-    "cacheReadTokens": 8980736,
-    "totalTokens": 9257945,
-    "totalCost": 0.17
-  }
+	"daily": [
+		{
+			"date": "2026-05-28",
+			"inputTokens": 223054,
+			"outputTokens": 54155,
+			"cacheCreationTokens": 0,
+			"cacheReadTokens": 8980736,
+			"totalTokens": 9257945,
+			"totalCost": 0.17,
+			"modelsUsed": ["deepseek-v4-pro", "deepseek-v4-flash"]
+		}
+	],
+	"totals": {
+		"inputTokens": 223054,
+		"outputTokens": 54155,
+		"cacheCreationTokens": 0,
+		"cacheReadTokens": 8980736,
+		"totalTokens": 9257945,
+		"totalCost": 0.17
+	}
 }
 ```
 

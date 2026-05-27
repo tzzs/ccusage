@@ -54,6 +54,7 @@ Unified tables include an **Agent** column so you can compare sources in one vie
 | Qwen         | `qwen`     | `ccusage qwen daily`      |
 | Copilot CLI  | `copilot`  | `ccusage copilot daily`   |
 | Gemini CLI   | `gemini`   | `ccusage gemini daily`    |
+| Reasonix     | `reasonix` | `ccusage reasonix daily`  |
 
 ## When to Focus a Source
 
@@ -72,6 +73,7 @@ ccusage kilo session
 ccusage qwen daily
 ccusage copilot daily --json
 ccusage gemini session --json
+ccusage reasonix daily
 ```
 
 ## Next Steps
